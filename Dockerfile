@@ -1,7 +1,7 @@
 FROM google/cloud-sdk:alpine
 MAINTAINER Jon Robison <narfman0@gmail.com>
 
-RUN apk add --no-cache build-base make python3 python3-dev && \
+RUN apk add --no-cache build-base make python3 python3-dev terraform && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools pipenv && \
