@@ -1,6 +1,11 @@
 FROM google/cloud-sdk:alpine
-MAINTAINER Jon Robison <narfman0@gmail.com>
-ENV TERRAFORM_URL https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
+
+LABEL maintainer="Jon Robison <narfman0@gmail.com>"
+
+ENV TERRAFORM_VERSION=0.11.11
+
+ENV TERRAFORM_URL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+
 RUN apk add --no-cache build-base make python3 python3-dev && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
