@@ -88,6 +88,8 @@ RUN set -ex \
     \
     && python3 --version
 
+RUN apk add --update nodejs nodejs-npm
+
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
     && ln -s idle3 idle \
