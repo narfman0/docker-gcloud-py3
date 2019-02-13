@@ -88,7 +88,7 @@ RUN set -ex \
     \
     && python3 --version
 
-RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs nodejs-npm make
 
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
