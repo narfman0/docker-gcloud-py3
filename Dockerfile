@@ -34,6 +34,7 @@ RUN set -ex \
         dpkg-dev dpkg \
         expat-dev \
         findutils \
+        g++ \
         gcc \
         gdbm-dev \
         libc-dev \
