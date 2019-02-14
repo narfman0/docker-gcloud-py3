@@ -76,7 +76,6 @@ RUN set -ex \
         | sort -u \
         | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
         | xargs -rt apk add --no-cache --virtual .python-rundeps \
-    && apk del .build-deps \
     \
     && find /usr/local -depth \
         \( \
@@ -88,7 +87,7 @@ RUN set -ex \
     \
     && python3 --version
 
-RUN apk add --update nodejs nodejs-npm make
+RUN apk add --update nodejs nodejs-npm
 
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
